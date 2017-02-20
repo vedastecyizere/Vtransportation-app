@@ -1,0 +1,20 @@
+<table>
+  <tr>
+
+    <th>Name</th>
+    <th>Description</th>
+    <th>Email</th>
+    <th>Phone Number</th>
+    <th>Image</th>
+  </tr>
+
+    <% @companies.each do |company| %>
+    <tr>
+      <td><%= company.name %></td>
+      <td><%= company.description %></td>
+      <td><%= company.email %></td>
+      <td><%= company.phone_number %></td>
+      <td><img class="size" src="<%= company.image %>"</td>
+    </tr>
+  <% end %> 
+</table>
