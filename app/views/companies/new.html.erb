@@ -1,21 +1,25 @@
 <h1>New Company</h1>
 
-<% form_tag "/companies", method: :post do %>
+<%= form_tag "/companies", method: :post do %>
 <div>
-  Name:<input type="text" name="name">
+  Name:        <input type="text" name="name">
 </div>
+<br>
 <div>
-  Description:<input type="text" name="description">
+  Description: <input type="text" name="description">
 </div>
+<br>
 <div>
-  Email:<input type="text" name="email">
+  Email:       <input type="text" name="email">
 </div>
+<br>
 <div>
-  Phone Number:<input type="text" name="phone_number">
+  Phone Number: <input type="text" name="phone_number">
 </div>
+<br>
 <div>
-  Image:<input type="text" name="">
+  Image:<input type="text" name="image">
 </div>
-<div>
-  <input type="submit" name="Create an item list!">
-</div>
+<br>
+<%= submit_tag "Submit" %>
+<% end %>

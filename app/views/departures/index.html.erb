@@ -1,0 +1,12 @@
+<h1>Schedule</h1>
+<div>
+  <% @departures.each_slice(2) do |two_departures| %>
+    <div>
+      <% two_departures.each do |departure| %>
+        <div class="col-md-4">
+          <h2><%= departure.time %></h2>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

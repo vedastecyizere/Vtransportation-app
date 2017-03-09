@@ -1,0 +1,28 @@
+<h1> Edit The Company List </h1>
+
+<%= form_tag "/companies/#{@company.id}", method: :patch do %>
+  <div>
+    Name: <input type="text" name="name" value="<%= @company.name %>">
+  </div>
+  <br>
+  <div>
+    Description: <input type="text" name="description" value="<%= @company.description %>">
+  </div>
+  <br>
+  <div>
+    Email: <input type="text" name="email" value="<%= @company.email %>">
+  </div>
+  <br>
+  <div>
+    Phone Number: <input type="text" name="phone_number" value="<%= @company.phone_number %>">
+  </div>
+  <br>
+  <div>
+    Image:<input type="text" name="image" value="<%= @company.images %>">
+  </div>
+  <br>
+  <div>
+    <input type="submit" value="Update the Company List"> 
+  </div>
+
+<% end %>

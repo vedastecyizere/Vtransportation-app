@@ -1,0 +1,18 @@
+<h1>Users</h1>
+<div>
+  <% if current_user && current_user.admin %>
+    <%= link_to "Add User", "/users/new" %>
+  <% end %>
+  <% @users.each_slice(2) do |three_users| %>
+    <div>
+      <% three_users.each do |user| %>
+        <div>
+          <h2><%= link_to user.first_name, "/users/#{user.id}" %></h2>
+          <h2>Last Name: <%= user.last_name %></h2>
+          <h2>Email: <%= user.email %></h2>
+          <h2>Phone Number: <%= user.phone_number %></h2>
+        </div>
+      <% end %>
+    </div> 
+  <% end %>
+</div>

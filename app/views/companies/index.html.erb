@@ -1,20 +1,28 @@
-<table>
-  <tr>
+<h1>Welcome to Rwanda Transportation Platform </h1>
+<div>
+  <% if current_user && current_user.admin %>
+    <%= link_to "Add Company", "/companies/new" %>
+  <% end %>
+  <% @companies.each_slice(2) do |two_companies| %>
+    <div>
+      <% two_companies.each do |company| %>
+        <div>
+          <h2><%= link_to company.name, "/companies/#{company.id}" %></h2>
+          <h3>Description: <%= company.description %></h3>
+          <h3>Email: <%= company.email %></h3>
+          <h3>Phone Number: <%= company.phone_number %></h3>
+          <h2><img src="<%= company.images.first.url %>"></h2>
+        </div>
+      <% end %>
+    </div> 
+  <% end %>
+</div>
 
-    <th>Name</th>
-    <th>Description</th>
-    <th>Email</th>
-    <th>Phone Number</th>
-    <th>Image</th>
-  </tr>
 
-    <% @companies.each do |company| %>
-    <tr>
-      <td><%= company.name %></td>
-      <td><%= company.description %></td>
-      <td><%= company.email %></td>
-      <td><%= company.phone_number %></td>
-      <td><img class="size" src="<%= company.image %>"</td>
-    </tr>
-  <% end %> 
-</table>
+
+
+
+
+
+
+
