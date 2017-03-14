@@ -1,41 +1,46 @@
-<h1>Your Company of Preference</h1>
-
-<h2>Name:<%= @company.name %></h2>
-<h2>Description:<%= @company.description %></h2>
-<h2>Email: <%= @company.email %></h2>
-<h2>Phone Number:<%= @company.phone_number %></h2>
-<h2>Image <img src="<%= @company.images.first.url%>"</h2>
-
-<h2>List of Trips</h2>
-
 <div class="row">
   <div class="col-md-0"></div>
   <div class="col-md-8">
+<div ng-app="app">
+  <div ng-controller="companyCtrl" ng-init="setup(<%= @company.id %>)">
+
+<h1>Your Company of Preference</h1>
+<h2>Name: {{company.name }}</h2>
+<h2>Description: {{company.description }}</h2>
+<h2>Email: {{company.email }}</h2>
+<h2>Phone Number: {{company.phone_number }}</h2>
+<img src="{{company.image}}">
+    <h1>List of Trips</h1>
+    <h2> Search Your Destination: <input ng-model="filterQuery"></h2>
+
     <table class="table">
       <tr>
-        <th>Origin</th>
-        <th>Destination</th>
-        <th>Price</th>
-        <th>Number of Places</th>
-        <th>Duration</th>
-        <th>Departure Time</th>
+        <th ng-click="toggleOrder('origin')">Origin</th>
+        <th ng-click="toggleOrder('destination')">Destination</th>
+        <th ng-click="toggleOrder('price')">Price</th>
+        <th ng-click="toggleOrder('number_person')">Number of Places</th>
+        <th ng-click="toggleOrder('duration')">Duration</th>
+        <th ng-click="toggleOrder('departure')">Departure Time</th>
       </tr>
-        <% @company.trips.each do |trip| %>
-          <tr>
-            <td><%= trip.origin.name %></td>
-            <td><%= trip.destination.name %></td>
-            <td><%= trip.price %></td>
-            <td><%= trip.number_person %></td>
-            <td><%= trip.duration %></td>
-            <td><%= trip.departure.time %></td>
-          </tr>
-        <% end %>
+        <tr ng-repeat="trip in company.trips | filter: filterQuery | orderBy:orderAttribute">
+          <td>{{trip.origin}}</td>
+          <td>{{trip.destination}}</td>
+          <td>{{trip.price}}</td>
+          <td>{{trip.number_person}}</td>
+          <td>{{trip.duration}}</td>
+          <td>{{trip.departure}}</td>
+        </tr>
     </table>
+      <tr>
+        <td><input ng-model="tripOrigin" placeholder="Add the origin"></td>
+        <td><input ng-model="tripDestination" placeholder="Add the destination"></td>
+        <td><input ng-model="tripNumberOfPlaces" placeholder="Add Available places"></td>
+        <td><input ng-model="tripDuration" placeholder="Add trip duration"></td>
+        <td><input ng-model="tripDeparture" placeholder="Add the departure time"></td>
+        <button ng-click="addTrip(tripOrigin, tripDestination, tripNumberOfPlaces, tripDuration, tripDeparture")>Add Trip </button>
+      </tr>
   </div>
 </div>
-<%= button_to "Delete", "/companies/#{@company.id}", method: :delete %>
-<%= button_to "Edit", "/companies/#{@company.id}/edit", method: :get %>
-<div>
-  <input type="hidden" name="company_id" value="<%= @company.id %>">
-</div>
+
+
 

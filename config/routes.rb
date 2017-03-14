@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html 
+
   get "/", to: 'images#index'
   get "/companies", to: 'companies#index'
   get "/companies/new", to: 'companies#new'
@@ -22,4 +23,12 @@ Rails.application.routes.draw do
 
 
   get "/departures", to: 'departures#index'
+
+  get "/homepages", to: 'homepages#index'
+
+  namespace :api do
+    get "/companies", to: 'companies#index' 
+    get "/companies/:id", to: 'companies#show'
+  end 
+
 end

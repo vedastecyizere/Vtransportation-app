@@ -5,7 +5,7 @@ class CompaniesController < ApplicationController
 
   def index 
     @companies = Company.all 
-    render "index.html.erb"    
+    render "index.html.erb"   
   end
 
   def show 
