@@ -9,6 +9,12 @@
       });
     }
 
+    $scope.set = function(current_user){
+      $http.setup = function(userId){
+        $scope.user_id = response.data;
+      }
+    }
+
     $scope.toggleOrder = function(attribute){
       $scope.orderAttribute = attribute;
     }

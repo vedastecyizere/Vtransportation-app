@@ -2,7 +2,7 @@
   <div class="col-md-0"></div>
   <div class="col-md-8">
 <div ng-app="app">
-  <div ng-controller="companyCtrl" ng-init="setup(<%= @company.id %>)">
+  <div ng-controller="companyCtrl" ng-init="setup(<%= @company.id %>, <%= current_user.id %>)">
 
 <h1>Your Company of Preference</h1>
 <h2>Name: {{company.name }}</h2>
@@ -18,9 +18,10 @@
         <th ng-click="toggleOrder('origin')">Origin</th>
         <th ng-click="toggleOrder('destination')">Destination</th>
         <th ng-click="toggleOrder('price')">Price</th>
-        <th ng-click="toggleOrder('number_person')">Number of Places</th>
+        <th ng-click="toggleOrder('number_person')">Available Tickets</th>
         <th ng-click="toggleOrder('duration')">Duration</th>
         <th ng-click="toggleOrder('departure')">Departure Time</th>
+        <th>Buy Now</th>
       </tr>
         <tr ng-repeat="trip in company.trips | filter: filterQuery | orderBy:orderAttribute">
           <td>{{trip.origin}}</td>
@@ -29,16 +30,23 @@
           <td>{{trip.number_person}}</td>
           <td>{{trip.duration}}</td>
           <td>{{trip.departure}}</td>
+          <td><form action="/bookings" method="post">
+                <input type="hidden" name="trip_id" value="{{trip.id}}">
+                <input type="hidden" name="user_id" value="{{current_user.id}}">
+                <button name"Buy" value="submit">Book Now</button>
+              </form>
+          </td>
+      
         </tr>
     </table>
-      <tr>
+      <!-- <tr>
         <td><input ng-model="tripOrigin" placeholder="Add the origin"></td>
         <td><input ng-model="tripDestination" placeholder="Add the destination"></td>
         <td><input ng-model="tripNumberOfPlaces" placeholder="Add Available places"></td>
         <td><input ng-model="tripDuration" placeholder="Add trip duration"></td>
         <td><input ng-model="tripDeparture" placeholder="Add the departure time"></td>
         <button ng-click="addTrip(tripOrigin, tripDestination, tripNumberOfPlaces, tripDuration, tripDeparture")>Add Trip </button>
-      </tr>
+      </tr> -->
   </div>
 </div>
 

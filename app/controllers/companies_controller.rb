@@ -3,9 +3,8 @@ class CompaniesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :authenticate_admin!, only: [:new, :create, :edit, :update, :destroy]
 
-  def index 
-    @companies = Company.all 
-    render "index.html.erb"   
+  def index
+    @companies = Company.all    
   end
 
   def show 
