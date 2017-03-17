@@ -2,7 +2,7 @@
   <div class="col-md-0"></div>
   <div class="col-md-8">
 <div ng-app="app">
-  <div ng-controller="companyCtrl" ng-init="setup(<%= @company.id %>, <%= current_user.id %>)">
+  <div ng-controller="companyCtrl" ng-init="setup(<%= @company.id %>, <%= current_user.id %>, <%= trip.id %>)">
 
 <h1>Your Company of Preference</h1>
 <h2>Name: {{company.name }}</h2>
@@ -32,8 +32,8 @@
           <td>{{trip.departure}}</td>
           <td><form action="/bookings" method="post">
                 <input type="hidden" name="trip_id" value="{{trip.id}}">
-                <input type="hidden" name="user_id" value="{{current_user.id}}">
-                <button name"Buy" value="submit">Book Now</button>
+                <input type="hidden" name="user_id" value="{{currentUserId}}">
+                <button name="Buy" value="submit">Book Now</button>
               </form>
           </td>
       

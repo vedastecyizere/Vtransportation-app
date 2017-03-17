@@ -2,17 +2,12 @@
   "use strict";
 
   angular.module("app").controller("companyCtrl", function($scope, $http){
-    $scope.setup = function(companyId){
+    $scope.setup = function(companyId, currentUserId){
       $http.get("/api/companies/" + companyId + ".json").then(function(response){
         $scope.company = response.data;
+        $scope.currentUserId = currentUserId;
 
       });
-    }
-
-    $scope.set = function(current_user){
-      $http.setup = function(userId){
-        $scope.user_id = response.data;
-      }
     }
 
     $scope.toggleOrder = function(attribute){

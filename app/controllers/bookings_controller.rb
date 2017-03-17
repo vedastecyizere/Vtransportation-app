@@ -5,11 +5,8 @@ class BookingsController < ApplicationController
   end
 
   def create
-    booking = Booking.new(trip_id: params[:trip_id], user_id: current_user.id)
+    booking = Booking.new(trip_id: params[:trip_id], user_id: params[:user_id])
     booking.save 
-    redirect_to "/bookings/#{booking.id}"
-
-
-    
+    redirect_to "/bookings/#{booking.id}"   
   end
 end
