@@ -8,9 +8,9 @@
       <% two_companies.each do |company| %>
         <div>
           <h2><%= link_to company.name, "/companies/#{company.id}" %></h2>
-          <h3>Description: <%= company.description %></h3>
-          <h3>Email: <%= company.email %></h3>
-          <h3>Phone Number: <%= company.phone_number %></h3>
+          <h3><%= company.description %></h3>
+          <h3><%= company.email %></h3>
+          <h3><%= company.phone_number %></h3>
           <h2><img class="image" src="<%= company.images.first.url %>"></h2>
         </div>
       <% end %>

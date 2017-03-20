@@ -6,4 +6,14 @@ class Trip < ApplicationRecord
   belongs_to :origin, foreign_key: "origin_id", class_name: "Location"
   has_many :bookings
   has_many :users, through: :bookings 
+
+  validates :number_person, presence: true 
+  validate :number_person_must_be_greater_than_0
+
+  def number_person_must_be_greater_than_0
+    if number_person && number_person <= 0 
+      errors.add(:number_person, "Sorry! No ticket remaining. You can pick from other trips")
+    end 
+    
+  end
 end

@@ -2,17 +2,20 @@
   <div class="col-md-2"></div>
   <div class="col-md-8">
     <table class="table">
+    <h1>Hello <%= current_user.first_name %>, here is your ticket!</h1>
       <tr>
+        <th>Ticket Number</th>
         <th>Origin</th>
         <th>Destination</th>
-        <h>Price</th>
+        <th>Price</th>
         <th>Departure Time</th>   
       </tr>
       <tr>
-        <td><%= @booking.trip.origin %></td>
-        <td><%= @booking.trip.destination %></td>
+        <td><%= @booking.id + 5000 %></td>
+        <td><%= @booking.trip.origin.name %></td>
+        <td><%= @booking.trip.destination.name %></td>
         <td><%= @booking.trip.price %></td>
-        <td><%= @booking.trip.departure %></td>
+        <td><%= @booking.trip.departure.time %></td>
         
       </tr>
     </table>

@@ -2,13 +2,13 @@
   <div class="col-md-0"></div>
   <div class="col-md-8">
 <div ng-app="app">
-  <div ng-controller="companyCtrl" ng-init="setup(<%= @company.id %>, <%= current_user.id %>, <%= trip.id %>)">
+  <div ng-controller="companyCtrl" ng-init="setup(<%= @company.id %>, <%= current_user.id %>)">
 
 <h1>Your Company of Preference</h1>
-<h2>Name: {{company.name }}</h2>
-<h2>Description: {{company.description }}</h2>
-<h2>Email: {{company.email }}</h2>
-<h2>Phone Number: {{company.phone_number }}</h2>
+<h2>{{company.name }}</h2>
+<h2>{{company.description }}</h2>
+<h2>{{company.email }}</h2>
+<h2>{{company.phone_number }}</h2>
 <img src="{{company.image}}">
     <h1>List of Trips</h1>
     <h2> Search Your Destination: <input ng-model="filterQuery"></h2>

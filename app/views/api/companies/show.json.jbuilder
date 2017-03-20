@@ -1,9 +1,11 @@
+json.id @company.id
 json.name @company.name 
 json.description @company.description
 json.email @company.email
 json.phone_number @company.phone_number
 json.image @company.images.first.url 
 json.trips @company.trips.each do |trip|
+  json.id trip.id
   json.origin trip.origin.name 
   json.destination trip.destination.name
   json.price trip.price
