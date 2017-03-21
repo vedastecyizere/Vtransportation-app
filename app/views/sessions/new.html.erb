@@ -1,13 +1,12 @@
 <div class="container">
   <div class="row">
    <div class="col-md-6">
-
-      <%= form_tag "/users", method: :post do %>
+      <%= form_tag "/login", method: :post do %>
       <form>
       <div id="fullscreen_bg" class="fullscreen_bg"/>
       <form class="form-login"><br>
         <h1 class="form-login-heading text-muted" style="text-align: center"><strong>Log In</strong></h1>
-        <h4>Email</h4><input type="name" class="form-control" name="email" placeholder="type your email" required="" autofocus="">
+        <h4>Email</h4><input type="email" class="form-control" name="email" placeholder="type your email" required="" autofocus="">
 
          <h4>Password</h4><input type="password" class="form-control" name="password" placeholder="type in your password" required="" autofocus="">
 
@@ -15,7 +14,11 @@
           Log In 
         </button>
       </form>
-      <h2 class="form-login-heading text-muted" style="text-align: center"><strong>Is your first time on this platform? Register Today.</strong></h2>
+        </div>
+      <% end %>
+      <%= form_tag "/users", method: :post do %>
+      <form>
+      <div id="fullscreen_bg" class="fullscreen_bg"/>
       <form class="form-signin"><br>
         <h1 class="form-signin-heading text-muted" style="text-align: center"><strong>Create Account</strong></h1>
         <h4>First Name</h4><input type="name" class="form-control" name="first_name" placeholder="First name" required="" autofocus="">

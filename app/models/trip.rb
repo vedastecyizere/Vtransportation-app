@@ -10,8 +10,14 @@ class Trip < ApplicationRecord
   validates :number_person, presence: true 
   validate :number_person_must_be_greater_than_0
 
+  def reduce_available_ticket_by_one
+    available_ticket = number_person - 1 
+    self.number_person = available_ticket
+    self.save 
+  end
+
   def number_person_must_be_greater_than_0
-    if number_person && number_person <= 0 
+    if number_person && number_person <= 0
       errors.add(:number_person, "Sorry! No ticket remaining. You can pick from other trips")
     end 
     
