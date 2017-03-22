@@ -5,5 +5,4 @@ class Location < ApplicationRecord
   has_many :companies, through: :trips
   has_many :departures, through: :trips
 
-
 end
