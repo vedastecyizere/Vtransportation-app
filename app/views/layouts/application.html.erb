@@ -9,9 +9,20 @@
   </head>
 
   <body>
-    <% flash.each do |name, message| %>
-    <div class="alert alert-<%= name %>" role="alert"><%= message %></div>
-    <% end %>
+    <p>
+      <% flash.each do |key, value| %>
+      <% alert_class = case key
+      when :notice then "success"
+      when :alert then "danger"
+      else key
+       end %>
+       <%= content_tag :div, class: "alert alert-#{alert_class}" do %>
+       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+       <%= value %>
+       <% end %>
+       <% end %>
+      </p>
+    
     <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -60,7 +71,6 @@
   </div><!-- /.container-fluid -->
     <div class="container">
 </nav>
-
     <%= yield %>
   </body>
 </html>

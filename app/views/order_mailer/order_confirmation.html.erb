@@ -1,0 +1,20 @@
+<P>Dear <%= @user.first_name  %></P>
+ <p>
+  Thank you for booking a ticket on <%= @company.name %>. You have chosen to pay via MTN Mobile Money.
+ </p>
+
+ <ul>
+  <ol>Dial *182# and choose option 1 which is "Send Money".</ol>
+  <ol>Then choose Option 1 again - "Mobile user".</ol>
+  <ol>Enter the MTN Momo number for <%= @company.name %>: <%= @company.phone_number %>.</ol>
+  <ol>Enter the exact total amount (inclusive of delivery fees).</ol>
+  <ol>Enter <%= @company.name %> and your ticket order number as a reason.</ol>
+  <ol>You'll receive a message with amount to be sent asking you to confirm by entering your PIN number.</ol>
+  <ol>Finally, you'll get a confirmation message of the deducted amount.</ol>
+ </ul>
+<p>Kindly note that if you fail to pay on this number, you have to arrive at the bus station before 30 minutes. Otherwise, it may result in the cancellation of your ticket order.</p>
+
+<p>Thank you for working with us!</p>
+<p>Best regars,</p>
+<p>Vedaste Cyizere</p>
+

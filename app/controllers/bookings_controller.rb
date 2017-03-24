@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
   def payment
     @booking = Booking.find_by(id: params[:id])
     if @booking
-      
+      OrderMailer.order_confirmation(@booking).deliver_now
     end
   end
 
