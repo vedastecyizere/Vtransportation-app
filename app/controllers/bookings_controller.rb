@@ -6,6 +6,9 @@ class BookingsController < ApplicationController
 
   def payment
     @booking = Booking.find_by(id: params[:id])
+    if @booking
+      
+    end
   end
 
   def create

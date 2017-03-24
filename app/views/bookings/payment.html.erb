@@ -24,10 +24,8 @@ $(document).ready(function(){
   <ol>You'll receive a message with amount to be sent asking you to confirm by entering your PIN number.</ol>
   <ol>Finally, you'll get a confirmation message of the deducted amount.</ol>
 
-<form action="/bookings" method="post">
-  <input type="hidden" name="trip_id" value="<%= @booking.trip.id %>">
-  <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <button name="Buy" value="submit">Confirm Payment</button>
-</form>
+  <%= button_to "Confirm Payment", "/bookings/#{@booking.id}", method: :get %>
+  
+
 </body>
 </html>
