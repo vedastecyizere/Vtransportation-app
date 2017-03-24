@@ -68,12 +68,12 @@
 
     <div id="right-panel">
       <div id="inputs">
-        <pre>
-var origin1 = lat: <%= @booking.trip.origin.latitude %>, lng: <%= @booking.trip.origin.latitude %>};
-var origin2 = 'Rubavu, Rwanda'
-var destinationA = 'Rubavu, Rwanda'
-var destinationB = lat: <%= @booking.trip.origin.latitude %>, lng: <%= @booking.trip.origin.latitude %>};
-        </pre>
+        <!-- <pre>
+var origin1 = {lat: <%= @booking.trip.origin.latitude %>, lng: <%= @booking.trip.origin.longitude %>};
+var origin2 = {lat: <%= @booking.trip.destination.latitude %>, lng: <%= @booking.trip.destination.longitude %>};
+var destinationA = {lat: <%= @booking.trip.destination.latitude %>, lng: <%= @booking.trip.destination.longitude %>};
+var destinationB = {lat: <%= @booking.trip.origin.latitude %>, lng: <%= @booking.trip.origin.longitude %>};
+        </pre> -->
       </div>
       <div>
         <strong>Results</strong>
@@ -86,10 +86,10 @@ var destinationB = lat: <%= @booking.trip.origin.latitude %>, lng: <%= @booking.
         var bounds = new google.maps.LatLngBounds;
         var markersArray = [];
 
-        var origin1 = {lat: <%= @booking.trip.origin.latitude %>, lng: <%= @booking.trip.origin.latitude %>};
-        var origin2 = 'Rubavu, Rwanda'
-        var destinationA = 'Rubavu, Rwanda'
-        var destinationB = lat: <%= @booking.trip.origin.latitude %>, lng: <%= @booking.trip.origin.latitude %>};
+        var origin1 = {lat: <%= @booking.trip.origin.latitude %>, lng: <%= @booking.trip.origin.longitude %>};
+        var origin2 = {lat: <%= @booking.trip.destination.latitude %>, lng: <%= @booking.trip.destination.longitude %>};
+        var destinationA = {lat: <%= @booking.trip.destination.latitude %>, lng: <%= @booking.trip.destination.longitude %>};
+        var destinationB = {lat: <%= @booking.trip.origin.latitude %>, lng: <%= @booking.trip.origin.longitude %>};
 
         var destinationIcon = 'https://chart.googleapis.com/chart?' +
             'chst=d_map_pin_letter&chld=D|FF0000|000000';
@@ -97,7 +97,7 @@ var destinationB = lat: <%= @booking.trip.origin.latitude %>, lng: <%= @booking.
             'chst=d_map_pin_letter&chld=O|FFFF00|000000';
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 55.53, lng: 9.4},
-          zoom: 9
+          zoom: 10
         });
         var geocoder = new google.maps.Geocoder;
 

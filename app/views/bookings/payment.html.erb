@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("ul").toggle();
+    });
+});
+</script>
+</head>
+<body>
+<h1>Thank you for Booking! Choose Payment Method</h1>
+<h2> MTN Mobile Money</h2>
+<button>Click here to access steps to follow</button>
+<ul>
+  <h4>Remember that if you change your mind or reject the booking, we will return you the money.</h4>
+  <ol>Dial *182# and choose option 1 which is "Send Money".</ol>
+  <ol>Then choose Option 1 again - "Mobile user".</ol>
+  <ol>Enter the MTN Momo number for <%= @booking.trip.company.name %>: <%= @booking.trip.company.phone_number %>.</ol>
+  <ol>Enter the exact total amount (inclusive of delivery fees).</ol>
+  <ol>Enter your buyer account name and order number as a reason.</ol>
+  <ol>You'll receive a message with amount to be sent asking you to confirm by entering your PIN number.</ol>
+  <ol>Finally, you'll get a confirmation message of the deducted amount.</ol>
+
+<form action="/bookings" method="post">
+  <input type="hidden" name="trip_id" value="<%= @booking.trip.id %>">
+  <input type="hidden" name="user_id" value="<%= current_user.id %>">
+  <button name="Buy" value="submit">Confirm Payment</button>
+</form>
+</body>
+</html>

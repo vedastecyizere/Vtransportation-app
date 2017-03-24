@@ -26,8 +26,9 @@ Rails.application.routes.draw do
 
   get "/homepages", to: 'homepages#index'
 
-  get "bookings/:id", to: 'bookings#show'
-  post "bookings", to: 'bookings#create'
+  get "/bookings/payment/:id", to: 'bookings#payment'
+  get "/bookings/:id", to: 'bookings#show'
+  post "/bookings", to: 'bookings#create'
 
   namespace :api do
     get "/companies", to: 'companies#index' 
