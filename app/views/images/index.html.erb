@@ -1,8 +1,8 @@
 <h1>Welcome to Rwanda transportation Platform</h1>
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="myCarousel" class="carousel slide" style = "width: 100%; height: 10;" data-ride="carousel">
   <!-- Indicators -->
-  <ol class="carousel-indicators">
+  <ol style = "width: 100%; height: 10;" class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
     <li data-target="#myCarousel" data-slide-to="2"></li>
@@ -10,22 +10,22 @@
   </ol>
 
   <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
+  <div style = "width: 100%; height: 10;" class="carousel-inner" role="listbox">
     <div class="item active">
-      <img class="carousel-size" src="https://freelancejournalist1980.files.wordpress.com/2013/08/dsc_0370.jpg" alt="Chania">
-      <div class="container">
-       <div class="carousel-caption">
+      <img style = "width: 100%; height: 10;" class="carousel-size" src="https://freelancejournalist1980.files.wordpress.com/2013/08/dsc_0370.jpg" alt="Chania">
+      <div style = "width: 100%; height: 10;" class="container">
+       <div style = "width: 100%; height: 10;" class="carousel-caption">
          <h1>Sign Up for easy transportation!</h1>
-         <p><a class="btn btn-lg btn-primary" href="/signup" role="button">Sign up today</a></p>
-         <p><a class="btn btn-lg btn-primary" href="/login" role="button">Log In</a></p>
+         <p><a style = "width: 100%; height: 10;" class="btn btn-lg btn-primary" href="/signup" role="button">Sign up today</a></p>
+         <p><a style = "width: 100%; height: 10;" class="btn btn-lg btn-primary" href="/login" role="button">Log In</a></p>
          <h3 class="carousel-color">This platform is reserved for passengers who like to make trips in different regions of Rwanda. It enables you to buy an online ticket from a transportation company of your choice.</h3>
          <p>By signing up or loggin in, you will be able to book a ticket from a company, destination and time of your preferances. You will also be able to chat with companies' managers.</p>
        </div>
       </div>
     </div>
     <% @images.each do |image| %>
-    <div class="item">
-      <img class="dash-image" src="<%= image.url %>" alt="Chania">
+    <div style="width: 100%; height: 10;" class="item">
+      <img class="dash-image" style = "width: 100%; height: 10;" src="<%= image.url %>" alt="Chania">
     </div>
     <% end %>
   </div>

@@ -1,25 +1,37 @@
 <h1>New Company</h1>
+<div class="container">
+  <div class="row">
+   <div class="col-md-6">
 
-<%= form_tag "/companies", method: :post do %>
-<div>
-  Name:        <input type="text" name="name">
+    <%= form_tag "/companies", method: :post do %>
+    <div id="fullscreen_bg" class="fullscreen_bg"/>
+    <div>
+      <input type="text" class="form-control" name="name" placeholder="company name" required="" autofocus="">
+    </div>
+    <br>
+    <div>
+      <input type="text" class="form-control" name="description" placeholder="company description" required="" autofocus="">
+    </div>
+    <br>
+    <div>
+      <input type="text" class="form-control" name="email" placeholder="company email" required="" autofocus="">
+    </div>
+    <br>
+    <div>
+      <input type="text" class="form-control"
+      name="phone_number"  placeholder="company phone number" required="" autofocus="">
+    </div>
+    <br>
+    <div>
+      <input type="text" class="form-control" name="image" placeholder="company image" required="" autofocus="">
+    </div>
+    <br>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">
+          Add New
+        </button>
+    <% end %>
+    </div>
+  </div>
 </div>
-<br>
-<div>
-  Description: <input type="text" name="description">
 </div>
-<br>
-<div>
-  Email:       <input type="text" name="email">
 </div>
-<br>
-<div>
-  Phone Number: <input type="text" name="phone_number">
-</div>
-<br>
-<div>
-  Image:<input type="text" name="image">
-</div>
-<br>
-<%= submit_tag "Submit" %>
-<% end %>

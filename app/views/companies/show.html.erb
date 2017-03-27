@@ -11,6 +11,10 @@
       <h2>{{company.phone_number }}</h2>
       <img src="{{company.image}}">        
     </dir>
+    <div class="form-group">
+      <label for="example-date-input">Select the Date</label>
+      <input type="date" class="form-control" name="Trip Date" id="example-date-input"  placeholder="Select the date">
+    </div>
       
 
     <h1>List of Trips</h1>
@@ -36,7 +40,7 @@
           <td><form action="/bookings" method="post">
                 <input type="hidden" name="trip_id" value="{{trip.id}}">
                 <input type="hidden" name="user_id" value="{{currentUserId}}">
-                <button name="Buy" value="submit">Book Now</button>
+                <input class="add-to-book btn btn-default", style="background-color: blue; color: white;" type="submit" value="Book Now" class="btn btn-default">
               </form>
           </td>
       
