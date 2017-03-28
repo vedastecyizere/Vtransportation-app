@@ -2,8 +2,8 @@
   <div class="col-md-0"></div>
   <div class="col-md-8">
 <div ng-app="app">
-  <div ng-controller="companyCtrl" ng-init="setup(<%= @company.id %>, <%= current_user.id %>)">
-    <h1>Your Company of Preference</h1>
+  <div  ng-controller="companyCtrl" ng-init="setup(<%= @company.id %>, <%= current_user.id %>)">
+    <h1 style="margin-left: 200px; color: blue;">Your Company of Preference</h1>
     <dir>
       <h2>{{company.name }}</h2>
       <h2>{{company.description }}</h2>
@@ -11,13 +11,20 @@
       <h2>{{company.phone_number }}</h2>
       <img src="{{company.image}}">        
     </dir>
+    <div class="btn-group">
+    <% if current_user && current_user.admin %>
+      <%= button_to "Edit Company", "/companies/#{@company.id}/edit", class:"btn btn-default", role:"button", method: :get %>
+      <%= button_to "Delete", "/companies/#{@company.id}", class:"btn btn-default", role:"button", method: :delete %></li>
+    <% end %>
+
+    </div>
     <div class="form-group">
       <label for="example-date-input">Select the Date</label>
       <input type="date" class="form-control" name="Trip Date" id="example-date-input"  placeholder="Select the date">
     </div>
       
 
-    <h1>List of Trips</h1>
+    <h1 style="margin-left: 200px; color: blue;">List of Trips</h1>
     <h2> Search Your Destination: <input ng-model="filterQuery"></h2>
 
     <table class="table">

@@ -4,6 +4,9 @@ class BookingsController < ApplicationController
     @booking = Booking.find_by(id: params[:id])
   end
 
+  def confirm_payment
+    
+
   def payment
     @booking = Booking.find_by(id: params[:id])
     if @booking
