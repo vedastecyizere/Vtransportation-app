@@ -30,6 +30,10 @@ Rails.application.routes.draw do
   get "/bookings/:id", to: 'bookings#show'
   post "/bookings", to: 'bookings#create'
 
+
+
+  get "/information", to: 'information#index'
+
   namespace :api do
     get "/companies", to: 'companies#index' 
     get "/companies/:id", to: 'companies#show'
