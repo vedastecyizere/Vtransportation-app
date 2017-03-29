@@ -34,6 +34,8 @@ Rails.application.routes.draw do
 
   get "/information", to: 'information#index'
 
+  get "/contacts", to: 'contacts#index'
+
   namespace :api do
     get "/companies", to: 'companies#index' 
     get "/companies/:id", to: 'companies#show'

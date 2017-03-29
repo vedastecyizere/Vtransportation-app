@@ -11,7 +11,7 @@ class CompaniesController < ApplicationController
     if params[:id] == "random"
       @company = Company.all.sample
     else 
-      @company = Company.find(params[:id])
+      @company = Company.find_by(id: params[:id])
     end     
   end
 
