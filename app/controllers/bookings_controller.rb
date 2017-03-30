@@ -2,10 +2,7 @@ class BookingsController < ApplicationController
   
   def show 
     @booking = Booking.find_by(id: params[:id])
-  end
-
-  def confirm_payment
-    
+  end 
 
   def payment
     @booking = Booking.find_by(id: params[:id])
@@ -25,7 +22,6 @@ class BookingsController < ApplicationController
     else
       redirect_to "/companies/#{trip.company.id}"
       flash[:warning] = "No Ticket available here"
-    end 
-       
+    end     
   end
 end
