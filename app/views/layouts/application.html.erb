@@ -26,7 +26,7 @@
       </p>
 
 
-    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top navbar-offset" style="background-color: #B9BC03; height: 80px; font-variant-position: center; font-size: 15px">
+    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top navbar-offset" style="background-color: yellow; height: 80px; font-variant-position: center; font-size: 15px; color: white;">
   <div class="container" >
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -36,14 +36,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Home</a>
-      <a class="navbar-brand" href="/information">About Us</a>
      </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <li><a href="/">Home<span class="sr-only">(current)</span></a></li>
         <li><a href="/companies/">Companies<span class="sr-only">(current)</span></a></li>
+        <li><a href="/information">About Us<span class="sr-only">(current)</span></a></li>
       </ul>
       <%= form_tag "/companies/search", class: "navbar-form navbar-left", method: :post do %>
         <div class="form-group">
@@ -126,7 +126,7 @@
         <div class="col-md-6 col-sm-6 col-xs-12">
           <ul class="list-inline">       
             <li>
-              <a href="https://www.facebook.com/Vedaste.Cyizere"><i class="fa fa-facebook fa-2x"></i></a>
+              <a target="blank" href="https://www.facebook.com/Vedaste.Cyizere"><i class="fa fa-facebook fa-2x"></i></a>
             </li>
              
             <li>
@@ -138,15 +138,15 @@
             </li>
             
             <li>
-              <a href="https://github.com/vedastecyizere?tab=repositories"><i class="fa fa-github fa-2x"></i></a>
+              <a target="blank1" href="https://github.com/vedastecyizere?tab=repositories"><i class="fa fa-github fa-2x"></i></a>
             </li>
               
             <li>
-              <a href="https://www.linkedin.com/in/vedaste-cyizere-b9a729103/"><i class="fa fa-linkedin fa-2x"></i></a>
+              <a target="blank2" href="https://www.linkedin.com/in/vedaste-cyizere-b9a729103/"><i class="fa fa-linkedin fa-2x"></i></a>
             </li>
              
             <li>
-              <a href="#"><i class="fa fa-tumblr fa-2x"></i></a>
+              <a  target="blank3" href="https://twitter.com/VedasteC"><i class="fa fa-tumblr fa-2x"></i></a>
             </li>
               
             <li>
